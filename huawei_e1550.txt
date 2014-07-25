@@ -1,0 +1,41 @@
+/etc/wvdial.conf
+
+[Dialer Megafon]
+Init1 = ATZ
+Init2 = AT+CGDCONT=1,"IP","internet"
+Modem Type = Analog Modem
+ISDN = 0
+Stupid Mode = yes
+New PPPD = yes
+Phone = *99#
+Modem = /dev/ttyUSB0
+Username = gdata
+Password = gdata
+Baud = 9600
+
+/etc/ppp/peers/wvdial
+
+noauth
+usepeerdns
+# defaultroute
+name wvdial
+persist
+chap-interval 30
+nopcomp
+novjccomp
+nobsdcomp
+nodeflate
+noaccomp
+lcp-echo-interval 2
+lcp-echo-failure 3
+noipdefault
+
+
+
+
+
+
+
+
+
+
